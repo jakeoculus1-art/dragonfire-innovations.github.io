@@ -1,1 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragonfire Innovations</title>
+  <meta name="description" content="Dragonfire Innovations — independent software development studio building apps, platforms, and game systems." />
+  <meta name="theme-color" content="#0b0b10" />
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --panel:#11111a;
+      --panel2:#0f0f17;
+      --text:#e8e8f2;
+      --muted:#b6b6c9;
+      --line:rgba(255,255,255,.10);
+      --accent:#d12b2b;  /* red */
+      --accent2:#d6b15e; /* gold */
+      --shadow:0 12px 40px rgba(0,0,0,.45);
+      --radius:16px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 800px at 20% -10%, rgba(209,43,43,.25), transparent 60%),
+                              radial-gradient(1000px 800px at 110% 10%, rgba(214,177,94,.18), transparent 55%),
+                              var(--bg);
+              color:var(--text);
+              font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+              line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      position:sticky; top:0; z-index:10;
+      background:linear-gradient(to bottom, rgba(11,11,16,.90), rgba(11,11,16,.70));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:14px 18px;
+      margin:-28px -18px 26px;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:40px;height:40px;border-radius:12px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(214,177,94,.65), transparent 70%),
+        radial-gradient(16px 16px at 70% 70%, rgba(209,43,43,.55), transparent 70%),
+        linear-gradient(135deg, rgba(209,43,43,.95), rgba(214,177,94,.85));
+      box-shadow:0 10px 25px rgba(209,43,43,.18);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .brand h1{font-size:14px; margin:0; letter-spacing:.35px}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+      border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text); background:rgba(255,255,255,.03)}
+    .hero{
+      display:grid; grid-template-columns: 1.25fr .75fr; gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(17,17,26,.92), rgba(15,15,23,.92));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .heroMain{padding:26px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:12px; color:var(--muted);
+      padding:8px 10px; border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(209,43,43,.12);
+    }
+    .hero h2{font-size:34px; margin:14px 0 10px; line-height:1.12; letter-spacing:.2px}
+    .hero p{margin:0; color:var(--muted); font-size:15px; max-width:60ch}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      font-weight:600;
+      font-size:13px;
+    }
+    .btnPrimary{
+      border-color: rgba(209,43,43,.35);
+      background: linear-gradient(135deg, rgba(209,43,43,.92), rgba(214,177,94,.70));
+      color:#0b0b10;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .heroSide{padding:18px; display:flex; flex-direction:column; gap:12px}
+    .pill{
+      padding:12px; border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    .pill h3{margin:0 0 6px; font-size:13px}
+    .pill p{margin:0; font-size:13px; color:var(--muted)}
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:14px; margin-top:18px;
+    }
+    .section{margin-top:34px}
+    .section h3{margin:0 0 10px; font-size:18px}
+    .section p.lead{margin:0 0 14px; color:var(--muted)}
+    .proj{padding:16px}
+    .tagRow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 8px; border-radius:999px;
+      background:rgba(255,255,255,.02);
+    }
+    .proj h4{margin:0 0 6px; font-size:15px}
+    .proj p{margin:0; color:var(--muted); font-size:13px}
+    .mini{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:12px}
+    .status{
+      font-size:12px; padding:6px 8px; border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background:rgba(255,255,255,.02);
+    }
+    .status.live{border-color: rgba(214,177,94,.35)}
+    .status.dev{border-color: rgba(209,43,43,.35)}
+    .split{
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .note{padding:16px}
+    footer{margin-top:40px; color:var(--muted); font-size:12px; text-align:center}
+    .sep{height:1px;background:var(--line); margin:18px 0}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      header{position:relative}
+    }
+  </style>
+</head>
 
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Dragonfire Innovations</h1>
+          <p>Independent software development</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#updates">Updates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card heroMain">
+        <div class="kicker"><span class="dot"></span> Building apps, platforms, and immersive systems</div>
+        <h2>Software that’s built clean — and built to last.</h2>
+        <p>
+          Dragonfire Innovations is an independent studio creating <strong>consumer apps</strong>, <strong>community platforms</strong>, and <strong>game systems</strong>.
+          Current work includes a medicine-focused mobile app and custom FiveM infrastructure.
+        </p>
+        <div class="cta">
+          <a class="btn btnPrimary" href="#projects">View projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <div class="sep"></div>
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          <strong>Note:</strong> If any project provides health-related information, it is for informational purposes only and not medical advice.
+        </p>
+      </div>
+
+      <div class="card heroSide">
+        <div class="pill">
+          <h3>Focus</h3>
+          <p>Practical UI, reliable backend logic, and systems designed for real users and communities.</p>
+        </div>
+        <div class="pill">
+          <h3>Current Tracks</h3>
+          <p>📱 Medicine App • 🎮 FiveM Systems • 🧩 Tools & automation</p>
+        </div>
+        <div class="pill">
+          <h3>Availability</h3>
+          <p>Open to collaborations, testing groups, and selective commissioned work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h3>Featured projects</h3>
+      <p class="lead">A few highlights — this page is designed to grow with you.</p>
+
+      <div class="grid">
+        <article class="card proj">
+          <h4>Medicine App</h4>
+          <p>A medicine-focused mobile app aimed at helping users manage routines and stay organised.</p>
+          <div class="tagRow">
+            <span class="tag">Mobile</span>
+            <span class="tag">Health</span>
+            <span class="tag">UX</span>
+          </div>
+          <div class="mini">
+            <span class="status dev">In development</span>
+            <a class="btn" href="#contact">Request beta access</a>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <h4>Red Dragon RP</h4>
+          <p>Serious RP infrastructure and custom gameplay systems built on Qbox for FiveM.</p>
+          <div class="tagRow">
+            <span class="tag">FiveM</span>
+            <span class="tag">Qbox</span>
+            <span class="tag">Systems</span>
+          </div>
+          <div class="mini">
+            <span class="status dev">In development</span>
+            <a class="btn" href="#contact">Partnerships</a>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <h4>Tools & Experiments</h4>
+          <p>Internal utilities, UI prototypes, and automation helpers built to speed up development.</p>
+          <div class="tagRow">
+            <span class="tag">Tooling</span>
+            <span class="tag">UI</span>
+            <span class="tag">Automation</span>
+          </div>
+          <div class="mini">
+            <span class="status live">Ongoing</span>
+            <a class="btn" href="#updates">See updates</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section split">
+      <div class="card note">
+        <h3>About Dragonfire Innovations</h3>
+        <p class="lead">
+          Dragonfire Innovations is a personal studio brand used to publish and present software work across apps, games, and systems engineering.
+        </p>
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          If you’re working with a team, you can still clearly describe your role here:
+          <strong>lead developer</strong>, systems design, UI, integrations, deployment, etc.
+        </p>
+      </div>
+
+      <div class="card note">
+        <h3>What I care about</h3>
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          • Clean, maintainable code<br/>
+          • Strong UX (fast, obvious, minimal friction)<br/>
+          • Systems that scale and don’t break under load<br/>
+          • Documented work that’s easy to onboard others into
+        </p>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <h3>Updates</h3>
+      <p class="lead">Use this like a dev log. Add entries as you ship features.</p>
+
+      <div class="card note">
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          <strong>Dev Log Template</strong><br/>
+          • What shipped<br/>
+          • What’s next<br/>
+          • Any blockers<br/>
+          • Screenshots / clips (optional)
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <p class="lead">Add your links below (Discord, GitHub, email). Replace the placeholders.</p>
+
+      <div class="card note">
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          <strong>Email:</strong> yourname@email.com<br/>
+          <strong>Discord:</strong> yourdiscordname<br/>
+          <strong>GitHub:</strong> github.com/yourusername
+        </p>
+        <div class="cta" style="margin-top:14px">
+          <a class="btn btnPrimary" href="mailto:yourname@email.com">Email me</a>
+          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Dragonfire Innovations. Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
